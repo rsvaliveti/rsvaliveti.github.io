@@ -1,0 +1,42 @@
+---
+{#
+  file: index.j2
+  description:
+  - this file contains the jinja2 template used to derive the content 
+    of the Work Experience page
+#}
+# Leave the homepage title empty to use the site title
+title: Work Experience
+date: 2022-12-22
+type: landing
+
+sections:  
+
+  - block: experience
+    content:
+      title: Experience
+      # Date format for experience
+      #   Refer to https://wowchemy.com/docs/customization/#date-format
+      date_format: Jan 2006
+      # Experiences.
+      #   Add/remove as many experience `items` below as you like.
+      #   Required fields are `title`, `company`, and `date_start`.
+      #   Leave `date_end` empty if it's your current employer.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+      {%- for entry in work %}
+        - title: {{ entry.position }}
+          company: {{ entry.company }}
+          company_url: '{% if entry.website %}{{ entry.website }}{% endif %}'
+          location: {{ entry.location }}
+          date_start: {% if entry.startDate %}{{ entry.startDate }}{% endif %}
+          date_end: {% if entry.endDate %}{{ entry.endDate }}{% endif %}
+          description: |2-
+          {%- for item in entry.highlights %}
+            * {{ item | wordwrap | indent(14) }}
+          {%- endfor %}
+      {%- endfor %}
+    design:
+      columns: '2'
+
+---

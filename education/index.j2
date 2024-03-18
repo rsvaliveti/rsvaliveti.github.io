@@ -1,0 +1,69 @@
+---
+{# 
+  file: index.j2
+  description:
+  - This file contains the jinja2 template for generating the content
+    for the education & awards page.
+#}
+# Leave the homepage title empty to use the site title
+title: Education & Awards
+date: 2022-12-22
+type: landing
+
+sections:
+  - block: experience
+    content:
+      title: Education
+      # Date format for experience
+      #   Refer to https://wowchemy.com/docs/customization/#date-format
+      date_format: Jan 2006
+      # Experiences.
+      #   Add/remove as many experience `items` below as you like.
+      #   Required fields are `title`, `company`, and `date_start`.
+      #   Leave `date_end` empty if it's your current employer.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+      {%- for entry in education %}
+        - title: {{ entry.degree }} ({{ entry.area }})
+          company: {{ entry.school }}
+          company_url: '{% if entry.website %}{{ entry.website }}{% endif %}'
+          location: {{ entry.location }}
+          date_start: {% if entry.startDate %}{{ entry.startDate }}{% endif %}
+          date_end: {% if entry.endDate %}{{ entry.endDate }}{% endif %}
+          {%- if entry.description %}
+          description: |2-
+          {%- for item in entry.description %}
+            * {{ item | wordwrap | indent(14) }}
+          {%- endfor %}
+          {%- endif %}
+      {%- endfor %}
+    design:
+      columns: '2'
+
+  - block: accomplishments
+    content:
+      # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
+      title: 'Awards'
+      subtitle:
+      # Date format: https://wowchemy.com/docs/customization/#date-format
+      date_format: Jan 2006
+      # Accomplishments.
+      #   Add/remove as many `item` blocks below as you like.
+      #   `title`, `organization`, and `date_start` are the required parameters.
+      #   Leave other parameters empty if not required.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+      {%- for entry in awards %}
+        - certificate_url: ''
+          date_start: {{ entry.startDate }}
+          date_end:   {% if entry.endDate %} {{ entry.endDate }} {% endif %}
+          description: {{ entry.summary }}
+          organization: {{ entry.awarder }}
+          organization_url: {% if entry.awarder_url %} {{ entry.awarder_url }} {% endif %}
+          title: {{ entry.title }}
+          url: ''
+      {%- endfor %}
+    design:
+      columns: '2'
+
+---
