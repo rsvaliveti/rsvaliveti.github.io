@@ -1,0 +1,17 @@
+# IDEs
+.idea/
+.vscode/
+
+# Hugo
+resources/
+public/
+jsconfig.json
+node_modules/
+go.sum
+.hugo_build.lock
+
+# Python related
+.venv/
+__pypackages__/
+.pdm.toml
+

@@ -1,0 +1,20 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Radhakrishna Valiveti", email = "rsvaliveti@outlook.com"},
+]
+dependencies = [
+    "academic>=0.11.2",
+    "jinja-cli>=1.2.2",
+]
+requires-python = ">=3.12"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool]
+[tool.pdm]

@@ -1,0 +1,130 @@
+---
+# Display name
+title: {{ basics.lastname }}
+
+# Name pronunciation (optional)
+#name_pronunciation: {{ basics.firstname }} {{ basics.lastname }}
+
+# Full name (for SEO)
+first_name: {{ basics.firstname }}
+last_name: {{ basics.lastname }}
+
+# Status emoji
+#status:
+#  icon: 
+
+# Is this the primary user of the site?
+superuser: true
+
+# Highlight the author in author lists? (true/false)
+highlight_name: true
+
+# Role/position/tagline
+role: System Architect
+
+# Organizations/Affiliations to display in Biography blox
+organizations:
+  - name: Infinera Corp.
+    url: https://www.infinera.com/
+
+# Social network links
+# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
+profiles:
+  - icon: at-symbol
+    url: 'mailto:{{ basics.email }}'
+    label: E-mail Me
+#  - icon: brands/x
+#    url: https://twitter.com/GetResearchDev
+#  - icon: brands/instagram
+#    url: https://www.instagram.com/
+  - icon: brands/github
+    url: https://github.com/rsvaliveti
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/rvaliveti
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/
+#  - icon: academicons/orcid
+#    url: https://orcid.org/
+
+interests:
+  - Optical Networking
+  - Machine Learning
+  - Functional Models
+
+education:
+{%- for entry in education %}
+  - area: {{ entry.degree }} ({{ entry.area }})
+    institution: {{ entry.school }}
+    date_start: {% if entry.startDate %}{{ entry.startDate }}{% endif %}
+    date_end: {% if entry.endDate %}{{ entry.endDate }}{% endif %}
+    summary: |2-
+      {%- if entry.description %}
+        {%- for item in entry.description %}
+          * {{ item | wordwrap | indent(14) }}
+        {%- endfor %}
+      {%- endif %}
+#    button:
+#      text: 'Read Thesis'
+#      url: 'https://example.com'
+{%- endfor %}
+
+work:
+  {%- for entry in work %}
+  - position: {{ entry.position }}
+    company_name: {{ entry.company }}
+    company_url: '{% if entry.website %}{{ entry.website }}{% endif %}'
+    company_logo: ''
+    date_start: {% if entry.startDate %}{{ entry.startDate }}{% endif %}
+    date_end: {% if entry.endDate %}{{ entry.endDate }}{% endif %}
+    summary: |2-
+      {%- for item in entry.highlights %}
+        * {{ item | wordwrap | indent(14) }}
+      {%- endfor %}
+  {%- endfor %}
+
+# Awards.
+#   Add/remove as many awards below as you like.
+#   Only `title`, `awarder`, and `date` are required.
+#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
+awards:
+  {%- for entry in awards %}
+  - title: {{ entry.title }}
+    url: ''
+    date: {{ entry.startDate }}
+    awarder: {{ entry.awarder }}
+    #icon: coursera
+    summary: {{ entry.summary }}
+  {%- endfor %}
+---
+
+## About Me
+
+I am a system architect in the hardware architecture group at Infinera Corp. In
+this role, I have been responsible for the OTN features (e.g. client mappings,
+ODU multiplexing, protection switching) in several INFN product families
+(e.g. DTN, DTN-X, XT, GX). This activity involves examining the end-to-end
+services in a top-down fashion, starting at the network level, and then using
+this high-level view to derive requirements for (a) the Network Element as a
+whole, and (b) the datapath ASICs/FPGAs that implement these features. In
+deriving these requirements, I have used the standards/recommendations
+developed by ITU-T/IEEE as guidance, and then expanded on these to generate
+detailed guidance for ASIC/FPGA designers. As part of this activity, I have
+tracked & contributed to ITU-T SG15 Q11 activities related to OTN
+Signals/Formats/Equipment.
+
+I have developed requirements to support Layer 1 encryption services in all the
+INFN datapath ASICs, and DSPs. This activity too, involved a top-down
+examination of the end-to-end view of encrypted services (e.g. datapath AES
+encryption, overheads, key exchange, key switches etc.), and then determining
+the functions/aspects which will be implemented by the ASICs.
+
+I have had extensive experience with the development of SONET networks and
+network elements, as well as Packet Optical Network elements that support both
+TDM, and packet services. I started my career developing software for various
+protocol stacks (e.g. X.21, X.75, HDLC/BiSync, OSI Layers 2-5), and then
+gradually migrated to roles that define architecture for products/components. 
+
+My graduate work was in the area of adaptive data structures. This work, builds
+on the concepts from Learning Automata, and examines the effectiveness of
+heuristics (e.g. Move-to-Front, Transpose) which organize data structures with
+each access, so as to (hopefully) optimize future accesses.

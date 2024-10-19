@@ -1,0 +1,239 @@
+
+basics:
+  firstname: Radhakrishna
+  lastname: Valiveti
+  email: rsvaliveti@gmail.com
+  phone: 510-371-4014
+  website: https://rsvaliveti.github.io
+
+education:
+- school: Carleton University
+  location: Ottawa, Canada
+  area: Electrical Engineering
+  degree: Ph.D.
+  startDate: 1987-09-01
+  endDate: 1991-01-31
+  description:
+    - 'Thesis: Learning Algorithms for Data Storage & Retrieval'
+    - 'Supervisor: Prof. B. John Oommen'
+  gpa: " "
+
+- school: McGill University
+  location: Montreal, Canada
+  degree: M. Sc.
+  area: Computer Science
+  gpa: " "
+  startDate: 1979-01-01
+  endDate: 1981-04-01
+  description:
+    - 'Thesis: A Communications Controller for Small-Computer Networks'
+    - 'Supervisor: Prof. Kasi Ananthanarayanan'
+
+- school: Indian Institute of Technology
+  location: Kharagpur, India
+  degree: B. Tech.
+  area: Electronics and Electrical Communication
+  gpa: " "
+  startDate: 1973-07-01
+  endDate: 1978-05-01
+  description:
+    - 'Undergraduate Project: Symbolic Circuit Analysis'
+
+summary:
+  - 'Extensive experience in optical transport network architecture (e.g. OTN, SONET), 
+     network element architecture, design, and implementation of carrier-grade 
+     transmission products.' 
+  - 'Extensive experience in developing requirements for ASICs/FPGAs used in OTN 
+     network elements'
+  - 'Regular contributor to ITU-T SG15 in the following areas: OTN Equipment, 
+     OTN Signal Formats & OTN Network Element Management.' 
+  - 'Co-authored IETF drafts related to GMPLS Extensions to support Beyond 100G
+     OTN links, FlexE connection signaling. Editor for RFC9376 (Applicability
+     of GMPLS for beyond 100 Gbit/s Optical Transport Network)'
+  - 'Hands on experience with the design & implementation of protocol software 
+     for Layers 2-5 of the OSI stack (e.g. LAPD, CLNP, IS-IS, ES-IS, TP4), IP/ATM, MPLS based L3VPNs'
+  - 'In-depth understanding of networking protocols, and their applications'
+
+work:
+- company: Infinera Corp
+  location: Sunnyvale, USA
+  position: System Architect (Distinguished Engineer)
+  website: https://www.infinera.com
+  startDate: 2006-10-30
+  highlights:
+  - 'Developed (white-box) requirements for various generations of Infinera ASICs
+    in these areas: G.709 OTN tributary interfaces, FlexE, FlexO, Infinera Proprietary
+    Signals/Formats (used on the line-side interfaces), Overhead processing, Alarm
+    Propagation. Supported the ASIC development team through all stages of development
+    to ensure full compliance to applicable standards.'
+  - 'Developed requirements for Layer 1 encryption (AES-GCM, AES-CTR modes) in INFN
+    ASICs: at the ODU layer (in mapper ASIC) & bulk encryption (DSP ASIC). These requirements
+    addressed the following aspects: algorithmic compliance, support for minimizing
+    the cryptographic boundary (for FIPS 140-2 validation).'
+  - 'Specified the architecture for supporting protection switching schemes (e.g., 1+1 SNCP, Y-cable)
+    in Infinera transponders and muxponders. This involved the timely reporting of defects to the
+    protection FSMs, FPGA assist to minimize the switching time.'
+  - 'Developed requirements for FEC Support for OC3/1GE Optical Supervisory Channels' 
+  - 'Developed the End-2-End mechanism for Shared Mesh Protection (SMP) for ODU connections.
+    This mechanism has been presented in various contributions to ITU-T SG15 Q9 (OTN
+    Equipment). This work contributed to the ITU-T recommendation G.783.3.'
+  - 'Defined the mechanism to support hitless ODUFlex resizing (specific to DTN-X networks).
+     Working with ASIC & Software teams to get the mechanism implemented.'
+  - 'Developed requirements related to control channel realization (e.g. trib & line
+     side GCC channels) for several generations of Infinera Network Elements.'
+  - 'Developed DTN-X Network Architecture Specification. This specification takes
+    a top-down view of DTN-X networks, and contains an in-depth coverage of these
+    aspects: Layers (i.e. Signals, Formats), Adaptations, OTN atomic function realization,
+    and Defect propagation. This document is used as the basis to derive requirements
+    for the ASICs/FPGAs.'
+  - 'Developed DTN Network Element requirements for these areas: GMPLS, L1VPN, Datapath
+    recovery (protection, and restoration).'
+
+- company: Fujitsu Network Communications
+  location: Richardson, USA
+  position: System Architect
+  website: https://www.fujitsu.com/us/products/network/
+  startDate: 2005-05-10
+  endDate:  2006-10-01
+  highlights:
+  - Participated in the architecture definition of the FW9500 hybrid platform that
+    supported TDM & Packet services (e.g. Point-to-Point Ethernet, VPLS) based on
+    MPLS Pseudowires
+  - Developed System Level Requirements for VPLS/H-VPLS, Control Plane High-Availability.
+  
+- company: Nortel
+  location: Richardson, USA
+  position: Contractor (SW development)
+  website: https://www.nortel.com
+  startDate: 2003-12-01
+  endDate: 2005-05-01
+  highlights:
+  - 'RSVP-TE for GGSN node: Wrote Functional Spec, Detailed Design & Designer Test plan. Worked
+    on design changes support for a redundant control processor.'
+  - 'BGP/MPLS VPNs for GGSN node: Wrote the Designer Test plan, 
+     Added support for MPLS & VRF historical statistics.'
+
+- company: Avici
+  location: Billerica, USA
+  position: Contractor (SW development)
+  startDate: 2003-10-01
+  endDate: 2003-11-20
+  highlights:
+  - 'Resolved software issues related to: PPP, SONET Link Aggregation, MPLS LSP Protection
+    (Fast Reroute).'
+
+- company: Ciena
+  location: San Jose, USA
+  position: Contractor (Systems Arch)
+  website: https://www.ciena.com
+  startDate: 2002-12-24
+  endDate: 2003-05-31
+  highlights:
+  - 'Specified the functional requirements for the CoreDirector features: Connection
+    Test Access, Connection Loopback, OSI/DCC, 1GE/10GE tunneling with SONET/SDH VCAT/LCAS).'
+
+- company: Fujitsu Network Communications
+  location: Richardson, USA
+  position: Systems Architect
+  website: https://www.fujitsu.com/us/products/network/
+  startDate: 1998-05-08
+  endDate: 2002-08-28
+  highlights:
+  - Part of the team tasked with developing the architecture for the first TDM/Packet
+    Hybrid. Primarily responsible for Layer 2 and Layer 3 VPN support over MPLS networks.
+  - Investigated protection of Point-to-Multipoint (P2MP, or multicast) MPLS LSPs,
+    for the purposes of offering a fully protected TLS service.
+  - Specified the optical UNI (O-UNI) interface between an MPLS LER (Label Edge Router),
+    and the Optical Network Element (ONE).
+  - Specification of Network Element Management Information models, and protocol specific
+    realizations (in terms of TL-1 and SNMP)
+
+- company: Nortel
+  location: Ottawa, Canada
+  position: Member of Scientific Staff
+  website: https://www.nortel.com
+  startDate: 1984-06-01
+  endDate:  1998-05-01
+  highlights:
+  - Part of a team defining the End-to-end architecture of a system offering Broadband
+    access.
+  - Developed various features for the HFC Cable Modem. E.g. Lightweight ATM signaling
+    protocol, IP NAT (to support multiple attached PCs), Software Upgrade
+  - 'Designed & Developed software for the following layers in the OSI Stack: LAPD
+    (with QoS), Layer 3 (CLNP, IS-IS, ES-IS), and Layer 5 (Session Layer). Implemented
+    performance enhancements at Layers 2 through 4 of the OSI stack'
+  - Implemented various STREAMs modules (e.g. TPI, Line Discipline Module, Serial
+    Drivers)
+  - Implemented a bridge for interconnecting IBM Token Ring LANs via a Frame Relay
+    WAN
+  - Analysis, Design, and Implementation of transparent access to (XMS based) remote
+    file servers (via X.25 networks), file transfer utilities.
+
+- company: Micom
+  location: Montreal, Canada
+  position: SW Designer
+  startDate: 1981-04-01
+  endDate: 1984-06-01
+  highlights:
+  - 'Designed and Implemented software for data communication protocols (e.g. BISYNC,
+    SDLC, ISO Transport Layer 4/0, Session/Transport layers for Teletext service)'
+
+awards:
+- title: Infinera Spectrum Award
+  startDate: '2024-09-01'
+  awarder: Infinera CEO
+  summary: 'Part of the team that solved a 400GE interop issue between customer network router & INFN muxponder'
+
+- title: Infinera President's Award
+  startDate: '2009-05-01'
+  awarder: Infinera President
+  summary: ''
+
+- title: Carleton University Medal for Outstanding Graduate Work at the Ph.D. level
+  startDate: '1991-05-01'
+  awarder: Carleton University
+  summary: 'Awarded the best thesis of the year'
+
+- title: Post-Graduate Scholarship from Nortel
+  startDate: 1987-09-01
+  endDate: 1991-01-31
+  awarder: Nortel
+  summary: 'Awarded for the duration of the Ph.D. program'
+
+- title: Post-Graduate Scholarship from the Natural Sciences and Engineering Research
+    Council (NSERC) of Canada
+  startDate: 1987-09-01
+  endDate: 1990-08-30
+  awarder: NSERC
+  summary: 'Awarded for the duration of the Ph.D. program'
+
+- title: President of India silver medal
+  startDate: '1978-05-01'
+  awarder: IIT Kharagpur
+  summary: Awarded for best academic performance in the graduating batch of the B.
+    Tech program in the Electronics & Communication Engineering (ECE) department
+
+- title: Stood fourth in the state of West Bengal in Higher Secondary Examination
+  startDate: '1973-06-01'
+  awarder: West Bengal HS Board
+  summary: 'The state recognizes the top ten students who appeared for the Higher
+           Secondary Board Examination every year.'
+
+bibfiles:
+  - patents.bib
+  - papers.bib
+
+skills:
+- name: ''
+  level: 100
+
+projects:
+- name: ''
+  description: ''
+  url: 'https://www.sample.net'
+  keywords:
+    - ""
+
+references:
+- name: ''
+  contact: ''
