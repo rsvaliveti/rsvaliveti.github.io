@@ -7,12 +7,15 @@ main:
   - name: Bio
     url: /
     weight: 10
-  - name: Experience
-    url: experience/
+  - name: Work
+    url: /work
     weight: 20
+  - name: Education & Awards
+    url: /education
+    weight: 30
   - name: Papers
     url: /papers
-    weight: 30
+    weight: 40
   - name: Patents
     url: /patents
-    weight: 40
+    weight: 50

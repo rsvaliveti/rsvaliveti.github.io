@@ -9,9 +9,11 @@ jsconfig.json
 node_modules/
 go.sum
 .hugo_build.lock
+hugo_stats.json 
 
 # Python related
 .venv/
 __pypackages__/
 .pdm.toml
+.pdm-python
 
