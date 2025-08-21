@@ -30,12 +30,12 @@ sections:
           #size: cover
           #position: center
           #parallax: false
-  - block: markdown
-    content:
-      title: 'Additional Info'
-      subtitle: ''
-      text: |-
-        Still thinking about additional content that can go here.
-    design:
-      columns: '1'
+  #- block: markdown
+  #  content:
+  #    title: 'Additional Info'
+  #    subtitle: ''
+  #    text: |-
+  #      Still thinking about additional content that can go here.
+  #  design:
+  #    columns: '1'
 ---
