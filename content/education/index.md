@@ -10,7 +10,7 @@ design:
 
 # Page sections
 sections:
-  - block: resume-education
+  - block: resume-experience
     content:
       username: admin
     design:
@@ -18,6 +18,8 @@ sections:
       date_format: 'January 2006'
       # Education or Experience section first?
       is_education_first: false
+      include_work: false
+      include_education: true
   - block: resume-awards
     content:
       title: Awards
