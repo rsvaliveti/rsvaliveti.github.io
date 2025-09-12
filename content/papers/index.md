@@ -9,10 +9,7 @@ sections:
     content:
       title: Journal Articles
       subtitle: ''
-      text: |-
-        {{% callout note %}}
-        Quickly discover relevant content by [filtering publications](/publication/).
-        {{% /callout %}}
+      text: ''
       # Filter on criteria
       filters:
         folders:
@@ -45,10 +42,7 @@ sections:
     content:
       title: Conference Papers
       subtitle: ''
-      text: |-
-        {{% callout note %}}
-        Quickly discover relevant content by [filtering publications](/publication/).
-        {{% /callout %}}
+      text: ''
       # Filter on criteria
       filters:
         folders:

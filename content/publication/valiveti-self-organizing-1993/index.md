@@ -27,7 +27,7 @@ publication_types:
 publication: ''
 publication_short: ''
 
-doi: https://doi.org/10.1006/jagm.1993.1005
+#doi: https://doi.org/10.1006/jagm.1993.1005
 
 abstract: In this paper, we study the problem of maintaining a doubly-linked list
   (DLL) in approximately optimal order, with respect to the mean search time. We study

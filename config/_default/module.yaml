@@ -10,14 +10,11 @@ imports:
 
 # Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
-  - source: hugo-blox/blox/community
-    target: layouts/partials/blox/community/
+  - source: hugo-blox/blox/my-resume-experience/
+    target: layouts/_partials/hbx/blocks/my-resume-experience/
     includeFiles: '**.html'
-  - source: hugo-blox/blox/all-access
-    target: layouts/partials/blox/
-    includeFiles: '**.html'
-  - source: hugo-blox/blox
-    target: assets/dist/community/blox/
+  - source: hugo-blox/blox/my-resume-experience/
+    target: assets/dist/my-resume-experience/blox/
     includeFiles: '**.css'
   - source: layouts
     target: layouts

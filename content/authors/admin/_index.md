@@ -257,7 +257,6 @@ awards:
     summary: The state recognizes the top ten students who appeared for the Higher Secondary Board Examination every year.
 ---
 
-## About Me
 
 I am a system architect in the hardware architecture group at Infinera Corp. In
 this role, I have been responsible for the OTN features (e.g. client mappings,

@@ -28,7 +28,7 @@ publication_types:
 publication: ''
 publication_short: ''
 
-doi: https://doi.org/10.1016/0031-3203(93)90062-2
+#doi: https://doi.org/10.1016/0031-3203(93)90062-2
 
 abstract: A fundamental problem in information theory and pattern recognition involves
   computing and estimating the probability density function associated with a set

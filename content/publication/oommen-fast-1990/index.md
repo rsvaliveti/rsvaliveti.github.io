@@ -29,7 +29,7 @@ publication: '*Proc. of the Third International Conf. on Industrial Engineering 
   of Artificial Intelligence and Expert Systems (IEA/AIE-90)*'
 publication_short: ''
 
-doi: 10.1145/98894.99108
+#doi: 10.1145/98894.99108
 
 abstract: ''
 

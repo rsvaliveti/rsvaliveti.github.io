@@ -9,10 +9,7 @@ sections:
     content:
       title: Patents
       subtitle: ''
-      text: |-
-        {{% callout note %}}
-        Quickly discover relevant content by [filtering publications](/publication/).
-        {{% /callout %}}
+      text: ''
       # Filter on criteria
       filters:
         folders:

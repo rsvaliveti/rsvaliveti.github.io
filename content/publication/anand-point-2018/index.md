@@ -29,7 +29,7 @@ publication_types:
 publication: '*2018 IEEE International Conference on Communications (ICC)*'
 publication_short: ''
 
-doi: 10.1109/ICC.2018.8422785
+#doi: 10.1109/ICC.2018.8422785
 
 abstract: ''
 

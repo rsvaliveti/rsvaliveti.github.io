@@ -28,7 +28,7 @@ publication_types:
 publication: ''
 publication_short: ''
 
-doi: 10.1109/21.135704
+# doi: 10.1109/21.135704
 
 abstract: The authors consider the problem of assigning more than one symbol of a
   finite alphabet A to the same key on a keyboard. Since multiple symbols of the alphabet

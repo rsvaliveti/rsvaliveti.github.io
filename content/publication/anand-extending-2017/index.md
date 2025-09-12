@@ -29,7 +29,7 @@ publication_types:
 publication: '*Optical Fiber Communication Conference*'
 publication_short: ''
 
-doi: 10.1364/OFC.2017.Th1I.3
+#doi: 10.1364/OFC.2017.Th1I.3
 
 abstract: New extensions to Segment Routing are introduced here that allow for an
   end-to-end path to include optical transport network segments that steer packets

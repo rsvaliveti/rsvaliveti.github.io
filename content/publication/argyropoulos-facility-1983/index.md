@@ -28,7 +28,7 @@ publication_types:
 publication: ''
 publication_short: ''
 
-doi: 10.1007/BF03338387
+#doi: 10.1007/BF03338387
 
 abstract: Accurate measurement and control for low-level transducer signals in metallurgical
   industry or laboratory is a complicated process. Until now, no measurement and control

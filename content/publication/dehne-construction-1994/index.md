@@ -30,7 +30,7 @@ publication_types:
 publication: ''
 publication_short: ''
 
-doi: https://doi.org/10.1006/jpdc.1994.1137
+#url: 'https://doi.org/10.1006/jpdc.1994.1137'
 
 abstract: ''
 
