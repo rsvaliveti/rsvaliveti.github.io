@@ -55,10 +55,10 @@ summary:
   - 'In-depth understanding of networking protocols, and their applications'
 
 work:
-- company: Infinera Corp
-  location: Sunnyvale, USA
+- company: Nokia Corp
+  location: San Jose, USA
   position: System Architect (Distinguished Engineer)
-  website: https://www.infinera.com
+  website: https://www.nokia.com
   startDate: 2006-10-30
   highlights:
   - 'Developed (white-box) requirements for various generations of Infinera ASICs

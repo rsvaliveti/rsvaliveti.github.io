@@ -24,8 +24,8 @@ role: System Architect
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Infinera Corp.
-    url: https://www.infinera.com/
+  - name: Nokia Corp.
+    url: https://www.nokia.com/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -33,18 +33,12 @@ profiles:
   - icon: at-symbol
     url: 'mailto:rsvaliveti@gmail.com'
     label: E-mail Me
-#  - icon: brands/x
-#    url: https://twitter.com/GetResearchDev
-#  - icon: brands/instagram
-#    url: https://www.instagram.com/
   - icon: brands/github
     url: https://github.com/rsvaliveti
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/rvaliveti
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-#  - icon: academicons/orcid
-#    url: https://orcid.org/
+    url:  https://scholar.google.com/citations?user=KedBRY8AAAAJ&hl=en
 
 interests:
   - Optical Networking
@@ -84,8 +78,8 @@ education:
 
 work:
   - position: System Architect (Distinguished Engineer)
-    company_name: Infinera Corp
-    company_url: 'https://www.infinera.com'
+    company_name: Nokia Corp
+    company_url: 'https://www.nokia.com'
     company_logo: ''
     date_start: 2006-10-30
     date_end: 
@@ -257,11 +251,12 @@ awards:
     summary: The state recognizes the top ten students who appeared for the Higher Secondary Board Examination every year.
 ---
 
-
-I am a system architect in the hardware architecture group at Infinera Corp. In
-this role, I have been responsible for the OTN features (e.g. client mappings,
-ODU multiplexing, protection switching) in several INFN product families
-(e.g. DTN, DTN-X, XT, GX). This activity involves examining the end-to-end
+I am a system architect in the hardware architecture group at Nokia. 
+I was previously employed at Infinera, which was acquired by Nokia in March 2025.
+In this role, I have been responsible for the OTN features 
+(e.g. client mappings,ODU multiplexing, protection switching) 
+in several INFN product families (e.g. DTN, DTN-X, XT, GX). 
+This activity involves examining the end-to-end
 services in a top-down fashion, starting at the network level, and then using
 this high-level view to derive requirements for (a) the Network Element as a
 whole, and (b) the datapath ASICs/FPGAs that implement these features. In
