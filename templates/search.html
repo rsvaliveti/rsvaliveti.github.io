@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="title is-2 mb-5">Search</h1>
+  <div class="search-container">
+    <input type="text" id="search" class="input is-medium" placeholder="Search publications, patents, and pages…" autocomplete="off">
+    <div class="search-results">
+      <ul class="search-results__items"></ul>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block extra_js %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.5/elasticlunr.min.js"></script>
+  <script src="{{ get_url(path='js/search.js') | safe }}"></script>
+{% endblock extra_js %}

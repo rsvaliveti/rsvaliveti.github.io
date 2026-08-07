@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "macros/pub.html" as pub %}
+
+{% block content %}
+  <h1 class="title is-2 mb-6">Patents</h1>
+
+  {% for page in section.pages | sort(attribute="date") | reverse %}
+    {{ pub::list_item(page=page) }}
+  {% endfor %}
+{% endblock content %}

@@ -1,0 +1,21 @@
++++
+title = "Determining Stochastic Dependence for Normally Distributed Vectors Using the Chi-Squared Metric"
+date = "1993-01-01"
+
+[extra]
+featured = false
+bibtex = "@article{journalArticle:valivetiDeterminingStochasticDependence1993,\n abstract = {A fundamental problem in information theory and pattern recognition involves computing and estimating the probability density function associated with a set of random variables. In estimating this density function, one can either assume that the form of the density function is known, and that we are merely estimating parameters that characterize the distribution or that no information about the density function is available. This problem has been extensively studied if the random variables are independent. If the random variables are dependent and are of the discrete sort, the problem of capturing this dependence between variables has been studied in Chow and Liu (IEEE Trans. Inf. Theory14, 462–467 (May 1968)). The analogous problem for normally distributed continuous random variables has been tackled in Chow et al. (Comput. Biomed. Res.12, 589–613 (1979)). In both these instances, the determination of the best dependence tree hinges on the well-known Expected Mutual Information Measure (EMIM) Metric. Recently Valiveti and Oommen studied the suitability of the chi-squared based metric in-lieu of the EMIM metric, for the discrete variable case (Pattern Recognition25, 1389–1400 (1992)). In this paper, we generalize the latter result and study the use of the chi-squared metric for determining dependence trees for normally distributed random vectors. We show that for such vectors, the chi-squared metric yields the optimal tree and that it is identical to the one obtained using the EMIM metric. The computation of the maximum likelihood estimate of the dependence tree is also discussed.},\n author = {Valiveti, R. S. and Oommen, B. J.},\n date = {1993},\n doi = {10.1016/0031-3203(93)90062-2},\n issn = {0031-3203},\n journaltitle = {Pattern Recognition},\n number = {6},\n pages = {975--987},\n title = {Determining Stochastic Dependence for Normally Distributed Vectors Using the Chi-Squared Metric},\n url = {http://www.sciencedirect.com/science/article/pii/0031320393900622},\n volume = {26}\n}"
+year = "1993"
+month = "01"
+day = "01"
+publish_date = "2026-07-27T15:21:42.307122+00:00"
+authors = [ "R. S. Valiveti", "B. J. Oommen",]
+publication_types = "article-journal"
+abstract = "A fundamental problem in information theory and pattern recognition involves computing and estimating the probability density function associated with a set of random variables. In estimating this density function, one can either assume that the form of the density function is known, and that we are merely estimating parameters that characterize the distribution or that no information about the density function is available. This problem has been extensively studied if the random variables are independent. If the random variables are dependent and are of the discrete sort, the problem of capturing this dependence between variables has been studied in Chow and Liu (IEEE Trans. Inf. Theory14, 462–467 (May 1968)). The analogous problem for normally distributed continuous random variables has been tackled in Chow et al. (Comput. Biomed. Res.12, 589–613 (1979)). In both these instances, the determination of the best dependence tree hinges on the well-known Expected Mutual Information Measure (EMIM) Metric. Recently Valiveti and Oommen studied the suitability of the chi-squared based metric in-lieu of the EMIM metric, for the discrete variable case (Pattern Recognition25, 1389–1400 (1992)). In this paper, we generalize the latter result and study the use of the chi-squared metric for determining dependence trees for normally distributed random vectors. We show that for such vectors, the chi-squared metric yields the optimal tree and that it is identical to the one obtained using the EMIM metric. The computation of the maximum likelihood estimate of the dependence tree is also discussed."
+publication = "Pattern Recognition"
+doi = "10.1016/0031-3203(93)90062-2"
+[[extra.links]]
+name = "URL"
+url = "http://www.sciencedirect.com/science/article/pii/0031320393900622"
+
++++

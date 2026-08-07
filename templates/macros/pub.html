@@ -1,0 +1,54 @@
+{# Human-readable label for a CSL publication type code. #}
+{% macro type_label(code) %}
+{%- if code == "article-journal" -%}Journal Article
+{%- elif code == "paper-conference" -%}Conference Paper
+{%- elif code == "patent" -%}Patent
+{%- elif code == "book" -%}Book
+{%- elif code == "chapter" -%}Book Chapter
+{%- elif code == "report" -%}Report
+{%- elif code == "thesis" -%}Thesis
+{%- elif code == "manuscript" -%}Manuscript
+{%- else -%}{{ code | replace(from="-", to=" ") | title }}
+{%- endif -%}
+{% endmacro type_label %}
+
+{# A single publication/patent card linking to its detail page. #}
+{% macro list_item(page) %}
+<div class="card cv-card mb-4">
+  <div class="card-content">
+    <div class="level is-mobile mb-2">
+      <div class="level-left">
+        {% if page.extra.publication_types %}
+          <span class="tag tag-pub-type is-rounded">{{ self::type_label(code=page.extra.publication_types) }}</span>
+        {% endif %}
+      </div>
+      <div class="level-right">
+        {% if page.extra.year %}<span class="cv-date">{{ page.extra.year }}</span>{% endif %}
+      </div>
+    </div>
+
+    <a href="{{ page.permalink | safe }}" class="pub-title has-text-weight-bold is-size-5">{{ page.title }}</a>
+
+    {% if page.extra.authors %}
+      <div class="is-size-6 pub-authors mt-1">{{ page.extra.authors | join(sep=", ") }}</div>
+    {% endif %}
+
+    {% if page.extra.publication %}
+      <div class="is-size-6 is-italic pub-venue">{{ page.extra.publication }}{% if page.extra.year %}, {{ page.extra.year }}{% endif %}</div>
+    {% endif %}
+
+    {% if page.extra.links or page.extra.doi %}
+      <div class="buttons are-small mt-2 mb-0">
+        {% if page.extra.links %}
+          {% for link in page.extra.links %}
+            <a href="{{ link.url | safe }}" class="button btn-outlined" target="_blank" rel="noopener">{{ link.name }}</a>
+          {% endfor %}
+        {% endif %}
+        {% if page.extra.doi %}
+          <a href="https://doi.org/{{ page.extra.doi }}" class="button btn-doi" target="_blank" rel="noopener">DOI</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endmacro list_item %}

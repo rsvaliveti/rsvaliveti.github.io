@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set cv = load_data(path="data/cv.yaml", format="yaml") %}
+  <h1 class="title is-2 mb-6">Education</h1>
+
+  {% for item in cv.sections.education %}
+    <div class="card cv-card cv-card-education mb-4">
+      <div class="card-content">
+        <div class="level is-mobile mb-1">
+          <div class="level-left">
+            <span class="has-text-weight-bold is-size-5">{{ item.degree }}{% if item.area %} in {{ item.area }}{% endif %}</span>
+          </div>
+          <div class="level-right">
+            <span class="cv-date">
+              {{ item.start_date | truncate(length=4, end="") }} &ndash; {{ item.end_date | truncate(length=4, end="") }}
+            </span>
+          </div>
+        </div>
+        <div class="is-size-6 cv-org">
+          {{ item.institution }}{% if item.location %} &bull; {{ item.location }}{% endif %}
+        </div>
+        {% if item.highlights %}
+          <div class="content is-size-6 cv-highlights mt-2">
+            <ul>
+              {% for highlight in item.highlights %}
+                <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+
+  {% if cv.sections.awards %}
+    <h2 class="title is-3 mt-6 mb-5">Honors &amp; Awards</h2>
+    {% for item in cv.sections.awards %}
+      <div class="card cv-card cv-card-award mb-4">
+        <div class="card-content">
+          <div class="level is-mobile mb-1">
+            <div class="level-left">
+              <span class="has-text-weight-bold is-size-5">{{ item.title }}</span>
+            </div>
+            <div class="level-right">
+              <span class="cv-date">
+                {{ item.start_date | truncate(length=4, end="") }}{% if item.end_date %} &ndash; {{ item.end_date | truncate(length=4, end="") }}{% endif %}
+              </span>
+            </div>
+          </div>
+          <div class="is-size-6 cv-org mb-1">{{ item.organization }}</div>
+          {% if item.summary %}
+            <div class="is-size-6 cv-summary">{{ item.summary }}</div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock content %}

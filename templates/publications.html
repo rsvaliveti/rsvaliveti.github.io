@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "macros/pub.html" as pub %}
+
+{% block content %}
+  <h1 class="title is-2 mb-6">Publications</h1>
+
+  {% set journals = section.pages | filter(attribute="extra.publication_types", value="article-journal") %}
+  {% set conferences = section.pages | filter(attribute="extra.publication_types", value="paper-conference") %}
+
+  {% if journals %}
+    <h2 class="title is-4 pub-section-heading">Journal Articles</h2>
+    {% for page in journals | sort(attribute="date") | reverse %}
+      {{ pub::list_item(page=page) }}
+    {% endfor %}
+  {% endif %}
+
+  {% if conferences %}
+    <h2 class="title is-4 pub-section-heading">Conference Proceedings</h2>
+    {% for page in conferences | sort(attribute="date") | reverse %}
+      {{ pub::list_item(page=page) }}
+    {% endfor %}
+  {% endif %}
+{% endblock content %}

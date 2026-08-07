@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set cv = load_data(path="data/cv.yaml", format="yaml") %}
+  <h1 class="title is-2 mb-6">Experience</h1>
+
+  {% for item in cv.sections.experience %}
+    <div class="card cv-card mb-4">
+      <div class="card-content">
+        <div class="level is-mobile mb-2">
+          <div class="level-left">
+            <span class="has-text-weight-bold is-size-5">{{ item.position }}</span>
+          </div>
+          <div class="level-right">
+            <span class="cv-date">
+              {%- set start = item.start_date | truncate(length=4, end="") -%}
+              {%- if item.end_date -%}
+                {%- set end = item.end_date | truncate(length=4, end="") -%}
+              {%- else -%}
+                {%- set end = "Present" -%}
+              {%- endif -%}
+              {{ start }} &ndash; {{ end }}
+            </span>
+          </div>
+        </div>
+        <div class="is-size-6 cv-org mb-3">
+          {{ item.organization }}{% if item.location %} &bull; {{ item.location }}{% endif %}
+        </div>
+        {% if item.highlights %}
+          <div class="content">
+            <ul>
+              {% for highlight in item.highlights %}
+                <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endblock content %}

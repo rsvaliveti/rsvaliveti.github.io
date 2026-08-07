@@ -1,0 +1,31 @@
+# Site configuration for the Zola static site generator.
+# The homepage profile and the experience/education/awards sections are sourced
+# from data/cv.yaml. Publications and patents are generated into content/ from
+# data/*.bib by scripts/import_bibtex.py (see the Makefile `bib` target).
+
+base_url = "https://rsvaliveti.github.io"
+title = "Radhakrishna Valiveti"
+author = "Radhakrishna Valiveti"
+description = "Personal website of Radhakrishna Valiveti — system architect (optical networking), with publications and patents."
+default_language = "en"
+
+compile_sass = false
+build_search_index = true
+
+[search]
+index_format = "elasticlunr_json"
+
+[extra]
+# Pinned CDN version of Bulma (kept in one place for the whole site).
+bulma_version = "1.0.4"
+
+# Primary navigation. `url` is matched against the current path to highlight
+# the active item.
+menu = [
+    { name = "About", url = "/" },
+    { name = "Experience", url = "/experience/" },
+    { name = "Education", url = "/education/" },
+    { name = "Publications", url = "/publications/" },
+    { name = "Patents", url = "/patents/" },
+    { name = "Search", url = "/search/" },
+]

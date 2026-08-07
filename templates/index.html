@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+{% endblock extra_head %}
+
+{% block content %}
+  {% set cv = load_data(path="data/cv.yaml", format="yaml") %}
+  {% set fi = cv.profile.firstname | truncate(length=1, end="") %}
+  {% set li = cv.profile.lastname | truncate(length=1, end="") %}
+  {% set initials = fi ~ li %}
+
+  <div class="columns is-variable is-6">
+    <div class="column is-4 has-text-centered">
+      <div class="avatar-box" data-initials="{{ initials }}">
+        {% if cv.profile.photo %}
+          {% set portrait = resize_image(path=cv.profile.photo, width=400, height=400, op="fill", format="avif", quality=80) %}
+          {% set portrait_webp = resize_image(path=cv.profile.photo, width=400, height=400, op="fill", format="webp", quality=80) %}
+          {% set portrait_jpg = resize_image(path=cv.profile.photo, width=400, height=400, op="fill", format="jpg", quality=80) %}
+          {# If the photo is missing the onerror handler falls back to initials. #}
+          <picture>
+            <source srcset="{{ portrait.url }}" type="image/avif">
+            <source srcset="{{ portrait_webp.url }}" type="image/webp">
+            <img src="{{ portrait_jpg.url }}" alt="{{ cv.profile.name }}" class="avatar-img"
+                 width="{{ portrait_jpg.width }}" height="{{ portrait_jpg.height }}"
+                 onerror="this.parentNode.parentNode.classList.add('avatar-fallback'); this.parentNode.remove();">
+          </picture>
+        {% else %}
+          <span class="avatar-initials">{{ initials }}</span>
+        {% endif %}
+      </div>
+
+      <h1 class="title is-3 mb-2">{{ cv.profile.name }}</h1>
+      <p class="subtitle is-6 profile-role mt-2 mb-3">{{ cv.profile.role }}</p>
+      <p class="is-size-6 has-text-weight-medium mb-4">{{ cv.profile.organization }}</p>
+
+      <div class="buttons is-centered">
+        {% for s in cv.profile.social %}
+          <a href="{{ s.url }}" class="button is-small is-rounded social-icon-btn"
+             aria-label="{{ s.label }}" title="{{ s.label }}"
+             {% if s.url is starting_with("http") %}target="_blank" rel="noopener"{% endif %}>
+            <span class="icon"><i class="{{ s.icon }}" aria-hidden="true"></i></span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="column is-8">
+      <div class="content mb-5">
+        <h2 class="title is-4 mb-3">Biography</h2>
+        <div class="bio">{{ cv.profile.bio | markdown | safe }}</div>
+      </div>
+
+      <div class="columns is-variable is-4">
+        <div class="column is-6">
+          <h3 class="title is-5 mb-3">Interests</h3>
+          <div class="tags">
+            {% for interest in cv.profile.interests %}
+              <span class="tag tag-interest is-medium mb-2">{{ interest }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <h3 class="title is-5 mb-3">Education</h3>
+          <div>
+            {% for item in cv.sections.education %}
+              <div class="education-list-item">
+                <div class="deg">{{ item.degree }}{% if item.area %} in {{ item.area }}{% endif %}</div>
+                <div class="inst">{{ item.institution }}{% if item.location %}, {{ item.location }}{% endif %}, {{ item.end_date | truncate(length=4, end="") }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

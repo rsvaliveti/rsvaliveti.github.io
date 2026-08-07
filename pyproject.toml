@@ -1,0 +1,10 @@
+[project]
+name = "rsv-website-tools"
+version = "0.1.0"
+description = "BibTeX import tooling for the Zola personal website (development-only)."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "bibtexparser>=1.4.3",
+    "toml>=0.10.2",
+]

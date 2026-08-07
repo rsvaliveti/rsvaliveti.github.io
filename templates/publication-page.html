@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% import "macros/pub.html" as pub %}
+
+{% block content %}
+  {% set section_slug = page.components | first %}
+  {% set back_url = "/" ~ section_slug ~ "/" %}
+
+  <nav class="breadcrumb mb-4" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="{{ back_url }}">{{ section_slug | title }}</a></li>
+      <li class="is-active"><a href="#" aria-current="page">Details</a></li>
+    </ul>
+  </nav>
+
+  <article class="content">
+    <h1 class="title is-3">{{ page.title }}</h1>
+
+    <div class="pub-meta box">
+      <div class="field is-grouped is-grouped-multiline mb-2">
+        {% if page.extra.publication_types %}
+          <div class="control"><span class="tag tag-pub-type">{{ pub::type_label(code=page.extra.publication_types) }}</span></div>
+        {% endif %}
+        {% if page.date %}
+          <div class="control"><span class="tag tag-neutral">{{ page.date }}</span></div>
+        {% endif %}
+      </div>
+
+      {% if page.extra.authors %}
+        <p class="mb-2"><strong>Authors:</strong> {{ page.extra.authors | join(sep=", ") }}</p>
+      {% endif %}
+      {% if page.extra.publication %}
+        <p class="mb-2"><strong>Published in:</strong> <em>{{ page.extra.publication }}</em></p>
+      {% endif %}
+      {% if page.extra.tags %}
+        <div class="tags mb-0">
+          {% for tag in page.extra.tags %}<span class="tag tag-interest">{{ tag }}</span>{% endfor %}
+        </div>
+      {% endif %}
+
+      {% if page.extra.links or page.extra.doi %}
+        <div class="buttons are-small mt-3 mb-0">
+          {% if page.extra.links %}
+            {% for link in page.extra.links %}
+              <a href="{{ link.url | safe }}" class="button btn-outlined" target="_blank" rel="noopener">{{ link.name }}</a>
+            {% endfor %}
+          {% endif %}
+          {% if page.extra.doi %}
+            <a href="https://doi.org/{{ page.extra.doi }}" class="button btn-doi" target="_blank" rel="noopener">DOI</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if page.extra.abstract %}
+      <h2 class="title is-5">Abstract</h2>
+      <p>{{ page.extra.abstract }}</p>
+    {% endif %}
+
+    {% if page.content %}
+      <h2 class="title is-5">Details</h2>
+      {{ page.content | safe }}
+    {% endif %}
+
+    {# BibTeX citation is embedded in front matter at import time. #}
+    {% if page.extra.bibtex %}
+      <h2 class="title is-5">BibTeX</h2>
+      <pre class="bibtex"><code>{{ page.extra.bibtex }}</code></pre>
+    {% endif %}
+  </article>
+
+  {% if page.higher or page.lower %}
+    <nav class="level mt-6" aria-label="pagination">
+      <div class="level-left">
+        {% if page.higher %}
+          <a class="button btn-neutral" href="{{ page.higher.permalink | safe }}">&larr; {{ page.higher.title | truncate(length=48) }}</a>
+        {% endif %}
+      </div>
+      <div class="level-right">
+        {% if page.lower %}
+          <a class="button btn-neutral" href="{{ page.lower.permalink | safe }}">{{ page.lower.title | truncate(length=48) }} &rarr;</a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+{% endblock content %}

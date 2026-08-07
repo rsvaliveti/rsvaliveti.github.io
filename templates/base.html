@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% if page and page.title %}
+    {% set page_title = page.title ~ " · " ~ config.title %}
+    {% set page_desc = page.description | default(value=config.description) %}
+  {% elif section and section.title and current_path != "/" %}
+    {% set page_title = section.title ~ " · " ~ config.title %}
+    {% set page_desc = section.description | default(value=config.description) %}
+  {% else %}
+    {% set page_title = config.title %}
+    {% set page_desc = config.description %}
+  {% endif %}
+  <title>{% block title %}{{ page_title }}{% endblock title %}</title>
+  <meta name="description" content="{{ page_desc }}">
+  <meta name="author" content="{{ config.author }}">
+
+  {# Open Graph / Twitter #}
+  <meta property="og:site_name" content="{{ config.title }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ current_url | default(value=config.base_url) | safe }}">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="canonical" href="{{ current_url | default(value=config.base_url) | safe }}">
+  <link rel="icon" href="{{ get_url(path='favicon.svg') | safe }}" type="image/svg+xml">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@{{ config.extra.bulma_version }}/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ get_url(path='css/custom.css') | safe }}">
+  {% if config.build_search_index %}
+    <link rel="alternate" type="application/json" href="{{ get_url(path='search_index.' ~ config.default_language ~ '.json') | safe }}">
+  {% endif %}
+  {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="/">{{ config.author }}</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="mainNavbar" class="navbar-menu">
+        <div class="navbar-end">
+          {% for item in config.extra.menu %}
+            {% set path = current_path | default(value="/") %}
+            {% if item.url == "/" %}
+              {% set is_active = path == "/" %}
+            {% else %}
+              {% set is_active = path is starting_with(item.url) %}
+            {% endif %}
+            <a class="navbar-item{% if is_active %} is-active has-text-weight-semibold{% endif %}" href="{{ item.url }}">{{ item.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section">
+    <div class="container">
+      {% block content %}{% endblock content %}
+    </div>
+  </main>
+
+  {% block footer %}
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        &copy; {{ now() | date(format="%Y") }} {{ config.author }}.
+        Built with <a href="https://www.getzola.org">Zola</a> and <a href="https://bulma.io">Bulma</a>.
+      </p>
+      <p class="is-size-7 footer-meta">Site generated {{ now() | date(format="%Y-%m-%d %H:%M UTC") }}</p>
+    </div>
+  </footer>
+  {% endblock footer %}
+
+  <script src="{{ get_url(path='js/main.js') | safe }}"></script>
+  {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>
