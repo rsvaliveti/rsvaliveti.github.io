@@ -20,6 +20,10 @@ clean_bib: ## Remove generated bundles from publications/ and patents/ (Ubuntu/M
 clean_bib_win: ## Remove generated bundles from publications/ and patents/ (Windows; keeps _index.md)
 	powershell -NoProfile -Command "Get-ChildItem content/publications,content/patents -Directory | Remove-Item -Recurse -Force"
 
+.PHONY:	cv
+cv:	## Compile typst source to generate cv.pdf
+	typst compile --root . typst/cv.typ static/cv/cv.pdf
+
 .PHONY: pp_script
 pp_script: ## Pretty-print the importer script with ruff
 	uvx ruff format scripts/import_bibtex.py
