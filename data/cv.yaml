@@ -13,18 +13,21 @@ profile:
   - Machine Learning
   - Functional Models
   social:
-  - label: Email
-    icon: fa-solid fa-envelope
+  - name: Email
+    user: rsvaliveti@gmail.com
     url: "mailto:rsvaliveti@gmail.com"
-  - label: "Google Scholar"
-    icon: fa-brands fa-google-scholar
+  - name: "Google Scholar"
+    user: "KedBRY8AAAAJ"
     url: "https://scholar.google.com/citations?user=KedBRY8AAAAJ&hl=en"
-  - label: LinkedIn
-    icon: fa-brands fa-linkedin
+  - name: LinkedIn
+    user: rvaliveti
     url: "https://linkedin.com/in/rvaliveti"
-  - label: GitHub
-    icon: fa-brands fa-github
+  - name: GitHub
+    user: rsvaliveti
     url: "https://github.com/rsvaliveti"
+  - name: website
+    user: rsvaliveti.github.io
+    url:  "https://rsvaliveti.github.io"
   bio: |
     I am a system architect in the hardware architecture group at Nokia. 
     I was previously employed at Infinera, which was acquired by Nokia in March 2025.

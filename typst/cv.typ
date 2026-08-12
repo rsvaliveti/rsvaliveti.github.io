@@ -13,19 +13,29 @@
   chic-separator(0.5pt),
 )
 
+// map the dictionary from the CV format to that expected by moderner
+#let build-social-dict(items) = {
+  let res = (:)
+  // Keys natively supported as single-string handles
+  let builtin = ("email", "github", "linkedin", "twitter", "gitlab", "orcid")
+
+  for item in items {
+    let key = lower(item.name)
+    if (key in builtin) and not ("icon" in item) {
+      res.insert(key, item.user)
+    } else {
+      // Fallback to custom 3-tuple format: (icon, url, display_text)
+      let icon-name = item.at("icon", default: "link")
+      //res.insert(key, (icon-name, item.url, item.user))
+    }
+  }
+  return res
+}
+
 #show: moderner-cv.with(
   name: author,
   lang: "en",
-  social: (
-    // predefined socials: phone, email, github, linkedin, x, bluesky
-    email: r.profile.email,
-    github: "rsvaliveti",
-    linkedin: "rvaliveti",
-    // custom socials: (icon, link, body)
-    // any fontawesome icon can be used: https://fontawesome.com/search
-    website: ("link", "https://rsvaliveti.github.io", "rsvaliveti.github.io"),
-    //address: "",
-  ),
+  social: build-social-dict(r.profile.social),
   image: none,
   paper: "us-letter",
   margin: (

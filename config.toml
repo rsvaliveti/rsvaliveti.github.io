@@ -29,3 +29,11 @@ menu = [
     { name = "Patents", url = "/patents/" },
     { name = "Search", url = "/search/" },
 ]
+
+# Font Awesome classes for profile social links (keyed by `name` in data/cv.yaml).
+[extra.social_icons]
+Email = "fa-solid fa-envelope"
+"Google Scholar" = "fa-brands fa-google-scholar"
+LinkedIn = "fa-brands fa-linkedin"
+GitHub = "fa-brands fa-github"
+website = "fa-solid fa-globe"

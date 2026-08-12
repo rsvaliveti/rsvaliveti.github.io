@@ -36,10 +36,11 @@
 
       <div class="buttons is-centered">
         {% for s in cv.profile.social %}
+          {% set icon = config.extra.social_icons[s.name] | default(value="fa-solid fa-link") %}
           <a href="{{ s.url }}" class="button is-small is-rounded social-icon-btn"
-             aria-label="{{ s.label }}" title="{{ s.label }}"
+             aria-label="{{ s.name }}" title="{{ s.name }}"
              {% if s.url is starting_with("http") %}target="_blank" rel="noopener"{% endif %}>
-            <span class="icon"><i class="{{ s.icon }}" aria-hidden="true"></i></span>
+            <span class="icon"><i class="{{ icon }}" aria-hidden="true"></i></span>
           </a>
         {% endfor %}
       </div>
