@@ -41,6 +41,7 @@ templates/
   macros/pub.html           # publication card + type-label macros
 static/
   css/custom.css  js/main.js js/search.js  favicon.svg
+  icons/                    # local SVG icons (About page social links)
 scripts/import_bibtex.py    # BibTeX -> content bundles (dev only)
 Makefile  pyproject.toml    # tooling
 .github/workflows/pages.yml # build + deploy to GitHub Pages
@@ -86,6 +87,11 @@ pinned Zola version, runs `zola build`, and publishes `public/` to the
   initials automatically.
 - **Bulma version:** change `extra.bulma_version` in `config.toml`.
 - **Navigation:** edit `extra.menu` in `config.toml`.
+- **Social icons:** SVG files live in `static/icons/`. Map each `name` from
+  `data/cv.yaml` to a file in `[extra.social_icons]` in `config.toml`. Icons are
+  rendered with a CSS mask so their color follows `--site-btn-social-color`. Use
+  standard Font Awesome `svgs/` exports (not `svgs-full/` or `-square` variants).
+  Unknown names fall back to `icons/link.svg`.
 
 ## Theming and colors
 

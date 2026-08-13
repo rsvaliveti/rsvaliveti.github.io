@@ -25,9 +25,7 @@ profile:
   - name: GitHub
     user: rsvaliveti
     url: "https://github.com/rsvaliveti"
-  - name: website
-    user: rsvaliveti.github.io
-    url:  "https://rsvaliveti.github.io"
+
   bio: |
     I am a system architect in the hardware architecture group at Nokia. 
     I was previously employed at Infinera, which was acquired by Nokia in March 2025.

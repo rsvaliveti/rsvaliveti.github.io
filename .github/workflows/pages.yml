@@ -34,7 +34,7 @@ jobs:
 
       - name: Build CV PDF
         run: |
-          typst compile --root . typst/cv.typ static/cv/cv.pdf
+          make cv
 
       # 2. Build Zola Site
       - name: Install Zola
@@ -44,7 +44,7 @@ jobs:
           zola --version
 
       - name: Build
-        run: zola build
+        run: make build
 
       # 3. Deploy to Github Pages branch
       - name: Deploy to gh-pages

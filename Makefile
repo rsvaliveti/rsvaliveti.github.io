@@ -22,7 +22,7 @@ clean_bib_win: ## Remove generated bundles from publications/ and patents/ (Wind
 
 .PHONY:	cv
 cv:	## Compile typst source to generate cv.pdf
-	typst compile --root . typst/cv.typ static/cv/cv.pdf
+	typst compile --root . --font-path ./fonts typst/cv.typ static/cv/cv.pdf
 
 .PHONY: pp_script
 pp_script: ## Pretty-print the importer script with ruff

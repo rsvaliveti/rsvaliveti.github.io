@@ -30,10 +30,10 @@ menu = [
     { name = "Search", url = "/search/" },
 ]
 
-# Font Awesome classes for profile social links (keyed by `name` in data/cv.yaml).
+# SVG paths under static/ for profile social links (keyed by `name` in data/cv.yaml).
 [extra.social_icons]
-Email = "fa-solid fa-envelope"
-"Google Scholar" = "fa-brands fa-google-scholar"
-LinkedIn = "fa-brands fa-linkedin"
-GitHub = "fa-brands fa-github"
-website = "fa-solid fa-globe"
+Email = "icons/envelope.svg"
+"Google Scholar" = "icons/google-scholar.svg"
+LinkedIn = "icons/linkedin.svg"
+GitHub = "icons/github.svg"
+website = "icons/globe.svg"
