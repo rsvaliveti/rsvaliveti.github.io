@@ -1,0 +1,424 @@
+/* ------------------------------------------------------------------ *
+ * Theme (Bulma 1.0 overrides + site tokens)
+ * ------------------------------------------------------------------ */
+:root {
+  /* Text and link contrast (Bulma 1.0) */
+  --bulma-text-l: 12%;
+  --bulma-text-strong-l: 10%;
+  --bulma-text-title-l: 10%;
+  --bulma-text-weak-l: 32%;
+  --bulma-link-h: 217deg;
+  --bulma-link-s: 75%;
+  --bulma-link-l: 40%;
+
+  /* Surfaces */
+  --site-bg: #fcfcfc;
+  --site-surface: #ffffff;
+  --site-surface-muted: #f7f9fc;
+  --site-surface-code: #f5f5f5;
+  --site-surface-avatar: #eef3fc;
+
+  /* Borders */
+  --site-border: #eaeaea;
+  --site-border-input: #ddd;
+  --site-border-subtle: #f0f0f0;
+
+  /* Card accents */
+  --site-accent-education: #48c78e;
+  --site-accent-award: #ffe08a;
+
+  /* Search */
+  --site-highlight: #fff3bf;
+
+  /* Shadows */
+  --site-shadow-navbar: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.06);
+  --site-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --site-shadow-card-hover: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --site-shadow-dropdown: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* Tags */
+  --site-tag-type-bg: hsl(var(--bulma-link-h), var(--bulma-link-s), 93%);
+  --site-tag-type-color: var(--bulma-link);
+  --site-tag-neutral-bg: var(--site-surface-code);
+  --site-tag-neutral-color: var(--bulma-text);
+  --site-tag-interest-bg: hsl(204, 86%, 93%);
+  --site-tag-interest-color: hsl(204, 70%, 32%);
+
+  /* Buttons */
+  --site-btn-primary-bg: var(--bulma-link);
+  --site-btn-primary-color: var(--site-surface);
+  --site-btn-outlined-color: var(--bulma-link);
+  --site-btn-outlined-border: var(--bulma-link);
+  --site-btn-neutral-bg: var(--site-surface-code);
+  --site-btn-neutral-color: var(--bulma-text);
+  --site-btn-neutral-border: var(--site-border);
+  --site-btn-doi-color: var(--bulma-text);
+  --site-btn-doi-border: var(--bulma-text);
+  --site-btn-social-bg: var(--site-surface-code);
+  --site-btn-social-color: var(--bulma-text);
+}
+
+/* ------------------------------------------------------------------ *
+ * Layout
+ * ------------------------------------------------------------------ */
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--site-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  max-width: 960px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Text roles (color defined here, not in templates)
+ * ------------------------------------------------------------------ */
+.profile-role,
+.cv-date,
+.cv-org,
+.cv-highlights,
+.cv-summary,
+.pub-authors,
+.pub-venue,
+.footer-meta,
+.education-list-item .inst {
+  color: var(--bulma-text-weak);
+}
+
+.education-list-item .inst {
+  font-size: 0.85rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * Tags (color defined here, not in templates)
+ * ------------------------------------------------------------------ */
+.tag-pub-type {
+  background-color: var(--site-tag-type-bg);
+  color: var(--site-tag-type-color);
+}
+
+.tag-neutral {
+  background-color: var(--site-tag-neutral-bg);
+  color: var(--site-tag-neutral-color);
+}
+
+.tag-interest {
+  background-color: var(--site-tag-interest-bg);
+  color: var(--site-tag-interest-color);
+}
+
+/* ------------------------------------------------------------------ *
+ * Buttons (color defined here, not in templates)
+ * ------------------------------------------------------------------ */
+.btn-primary {
+  background-color: var(--site-btn-primary-bg);
+  border-color: var(--site-btn-primary-bg);
+  color: var(--site-btn-primary-color);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.92);
+  color: var(--site-btn-primary-color);
+}
+
+.btn-outlined {
+  background-color: transparent;
+  border-color: var(--site-btn-outlined-border);
+  color: var(--site-btn-outlined-color);
+}
+
+.btn-outlined:hover {
+  background-color: var(--site-btn-outlined-color);
+  border-color: var(--site-btn-outlined-border);
+  color: var(--site-btn-primary-color);
+}
+
+.btn-neutral {
+  background-color: var(--site-btn-neutral-bg);
+  border-color: var(--site-btn-neutral-border);
+  color: var(--site-btn-neutral-color);
+}
+
+.btn-neutral:hover {
+  filter: brightness(0.97);
+  color: var(--site-btn-neutral-color);
+}
+
+.btn-doi {
+  background-color: transparent;
+  border-color: var(--site-btn-doi-border);
+  color: var(--site-btn-doi-color);
+}
+
+.btn-doi:hover {
+  background-color: var(--site-btn-doi-color);
+  border-color: var(--site-btn-doi-border);
+  color: var(--site-btn-primary-color);
+}
+
+.social-icon-btn {
+  background-color: var(--site-btn-social-bg);
+  border-color: var(--site-btn-neutral-border);
+  color: var(--site-btn-social-color);
+}
+
+.social-icon-btn:hover {
+  filter: brightness(0.97);
+  color: var(--site-btn-social-color);
+}
+
+/* ------------------------------------------------------------------ *
+ * Navbar
+ * ------------------------------------------------------------------ */
+.navbar {
+  border-bottom: 1px solid var(--site-border);
+  background-color: var(--site-surface);
+  box-shadow: var(--site-shadow-navbar);
+}
+
+.navbar-item.is-active,
+.navbar-item.is-active:hover {
+  background-color: transparent;
+  color: var(--bulma-link);
+  box-shadow: inset 0 -2px 0 var(--bulma-link);
+}
+
+/* ------------------------------------------------------------------ *
+ * Footer
+ * ------------------------------------------------------------------ */
+.footer {
+  flex-shrink: 0;
+  padding: 2rem 1.5rem;
+  background-color: var(--site-surface);
+  border-top: 1px solid var(--site-border);
+  color: var(--bulma-text-weak);
+  font-size: 0.85rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * CV cards (experience / education / awards / publications)
+ * ------------------------------------------------------------------ */
+.cv-card {
+  border-left: 4px solid var(--bulma-link);
+  border-radius: 4px;
+  box-shadow: var(--site-shadow-card);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cv-card .card-content {
+  padding: 0.85rem 1.15rem;
+}
+
+.cv-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--site-shadow-card-hover);
+}
+
+.cv-card-education {
+  border-left-color: var(--site-accent-education);
+}
+
+.cv-card-award {
+  border-left-color: var(--site-accent-award);
+}
+
+.cv-date {
+  font-weight: 600;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* Keep long titles from squeezing the date out of the row. */
+.cv-card .level {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.cv-card .level-left {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 1rem;
+}
+
+.cv-card .level-left .has-text-weight-bold {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.cv-card .level-right {
+  flex-shrink: 0;
+}
+
+.cv-card .content ul {
+  margin-left: 1.2em;
+  margin-top: 0.3em;
+}
+
+.cv-card .content li {
+  font-size: 0.9rem;
+  margin-bottom: 0.15em;
+}
+
+.cv-card .buttons.are-small {
+  margin-top: 0.4rem !important;
+}
+
+/* ------------------------------------------------------------------ *
+ * Publications
+ * ------------------------------------------------------------------ */
+.pub-title {
+  display: inline-block;
+  line-height: 1.35;
+  color: var(--bulma-text);
+}
+
+.pub-title:hover {
+  color: var(--bulma-link);
+}
+
+.pub-section-heading {
+  border-bottom: 2px solid var(--site-border);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+.pub-meta {
+  background-color: var(--site-surface-muted);
+  box-shadow: none;
+  border: 1px solid var(--site-border);
+}
+
+.bibtex {
+  background: var(--site-surface-code);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * Home page: avatar + summaries
+ * ------------------------------------------------------------------ */
+.avatar-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--site-surface-avatar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem auto;
+  border: 2px solid var(--bulma-link);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatar-initials,
+.avatar-box.avatar-fallback::after {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--bulma-link);
+}
+
+.avatar-box.avatar-fallback::after {
+  content: attr(data-initials);
+}
+
+.bio p {
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.education-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.education-list-item .deg {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.social-icon-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.social-icon-btn .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.social-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  -webkit-mask-image: var(--social-icon-url);
+  mask-image: var(--social-icon-url);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* ------------------------------------------------------------------ *
+ * Search
+ * ------------------------------------------------------------------ */
+.search-container {
+  position: relative;
+  max-width: 640px;
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid var(--site-border-input);
+  border-radius: 4px;
+  background-color: var(--site-surface);
+  box-shadow: var(--site-shadow-dropdown);
+  z-index: 1000;
+}
+
+.search-results__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-results__item {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--site-border-subtle);
+}
+
+.search-results__item a {
+  font-weight: 600;
+}
+
+.search-results__item mark {
+  background: var(--site-highlight);
+}
